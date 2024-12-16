@@ -1,0 +1,36 @@
+uuid: dd4c3781-7744-49bb-90e6-30e7ea6a344d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.top_10_lists.field_body
+    - field.field.node.top_10_lists.field_select_movies
+    - node.type.top_10_lists
+  module:
+    - user
+id: node.top_10_lists.default
+targetEntityType: node
+bundle: top_10_lists
+mode: default
+content:
+  field_body:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_select_movies:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

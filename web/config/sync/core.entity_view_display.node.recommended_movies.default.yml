@@ -1,0 +1,28 @@
+uuid: 739d24d5-ee93-4fd0-b74d-7d39a555f975
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.recommended_movies.field_select_recommend_movies
+    - node.type.recommended_movies
+  module:
+    - user
+id: node.recommended_movies.default
+targetEntityType: node
+bundle: recommended_movies
+mode: default
+content:
+  field_select_recommend_movies:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

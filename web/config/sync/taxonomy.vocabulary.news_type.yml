@@ -1,0 +1,9 @@
+uuid: cf8d138d-a346-46f7-be49-0324edf5119a
+langcode: en
+status: true
+dependencies: {  }
+name: 'News Type'
+vid: news_type
+description: 'Movie news focuses on film releases, production updates, and industry trends, while celebrity news centers on personal lives'
+weight: 0
+new_revision: false

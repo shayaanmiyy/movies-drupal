@@ -1,0 +1,9 @@
+uuid: 38e6a866-249e-46e1-8f55-e4fa8e111172
+langcode: en
+status: true
+dependencies: {  }
+name: Genre
+vid: genre
+description: 'Movie genre categorization involves classifying films based on comedy, adventure, action, etc.'
+weight: 0
+new_revision: false
