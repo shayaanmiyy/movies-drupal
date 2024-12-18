@@ -1,20 +1,24 @@
-uuid: bd78f893-52b5-4563-af2c-a512c07142b7
+uuid: 23340fa7-51a4-4725-8f39-40378b01a129
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_news_type
-    - node.type.news
+    - field.storage.node.field_celeb_news_type
+    - node.type.celebrity_news
     - taxonomy.vocabulary.news_type
-id: node.news.field_news_type
-field_name: field_news_type
+  content:
+    - 'taxonomy_term:news_type:ba86ef8e-7762-4a20-b164-f6ab007cf266'
+id: node.celebrity_news.field_celeb_news_type
+field_name: field_celeb_news_type
 entity_type: node
-bundle: news
-label: 'News Type'
+bundle: celebrity_news
+label: 'News type'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: ba86ef8e-7762-4a20-b164-f6ab007cf266
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

@@ -1,4 +1,4 @@
-uuid: 9a181579-9aa8-43c4-803a-0dd82796972b
+uuid: 51753e12-4a4f-4ba3-afa0-a5dd85bf7595
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'Top 10 Lists'
-type: top_10_lists
+name: 'Celebrity News'
+type: celebrity_news
 description: null
 help: null
 new_revision: true

@@ -1,18 +1,19 @@
-uuid: 3d0e0b8f-0ba8-4f66-ac07-d30312684537
+uuid: bc7a1fdf-fc89-4bff-8e64-26944739e785
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_select_movies
-field_name: field_select_movies
+    - taxonomy
+id: node.field_celeb_news_type
+field_name: field_celeb_news_type
 entity_type: node
 type: entity_reference
 settings:
-  target_type: node
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 10
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

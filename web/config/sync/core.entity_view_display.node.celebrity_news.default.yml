@@ -1,26 +1,27 @@
-uuid: dd4c3781-7744-49bb-90e6-30e7ea6a344d
+uuid: 267fe0be-21f8-41bc-9f53-8d555ca650db
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.top_10_lists.field_body
-    - field.field.node.top_10_lists.field_select_movies
-    - node.type.top_10_lists
+    - field.field.node.celebrity_news.body
+    - field.field.node.celebrity_news.field_celeb_news_type
+    - node.type.celebrity_news
   module:
+    - text
     - user
-id: node.top_10_lists.default
+id: node.celebrity_news.default
 targetEntityType: node
-bundle: top_10_lists
+bundle: celebrity_news
 mode: default
 content:
-  field_body:
-    type: basic_string
-    label: above
+  body:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 101
     region: content
-  field_select_movies:
+  field_celeb_news_type:
     type: entity_reference_label
     label: above
     settings:

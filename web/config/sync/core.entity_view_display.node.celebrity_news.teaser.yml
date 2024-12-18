@@ -1,17 +1,18 @@
-uuid: 8dd17df5-9ae1-4aec-909b-2e4c86148129
+uuid: 2136f63a-dc41-4230-8269-f1f00dffe963
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.basic_pages.body
-    - node.type.basic_pages
+    - field.field.node.celebrity_news.body
+    - field.field.node.celebrity_news.field_celeb_news_type
+    - node.type.celebrity_news
   module:
     - text
     - user
-id: node.basic_pages.teaser
+id: node.celebrity_news.teaser
 targetEntityType: node
-bundle: basic_pages
+bundle: celebrity_news
 mode: teaser
 content:
   body:
@@ -27,4 +28,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_celeb_news_type: true

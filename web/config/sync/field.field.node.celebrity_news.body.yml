@@ -1,16 +1,16 @@
-uuid: e99a8221-c4f7-4945-872c-b31e026000f5
+uuid: 6cad7976-5fa8-43e3-99e2-555ec577dc60
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.news
+    - node.type.celebrity_news
   module:
     - text
-id: node.news.body
+id: node.celebrity_news.body
 field_name: body
 entity_type: node
-bundle: news
+bundle: celebrity_news
 label: Body
 description: ''
 required: false

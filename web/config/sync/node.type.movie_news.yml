@@ -1,4 +1,4 @@
-uuid: aef2b875-439b-4e97-bef7-ab17956d26e7
+uuid: 2b59a11f-b2c9-46e6-9fd2-51646c116a81
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: News
-type: news
+name: 'Movie News'
+type: movie_news
 description: null
 help: null
 new_revision: true

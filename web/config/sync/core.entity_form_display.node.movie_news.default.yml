@@ -1,17 +1,17 @@
-uuid: 59a627b8-5ad5-4be3-8cc0-41f21813cb7a
+uuid: 107c101d-0838-4401-99dc-27aee7d5a872
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.news.body
-    - field.field.node.news.field_news_type
-    - node.type.news
+    - field.field.node.movie_news.body
+    - field.field.node.movie_news.field_news_type
+    - node.type.movie_news
   module:
     - path
     - text
-id: node.news.default
+id: node.movie_news.default
 targetEntityType: node
-bundle: news
+bundle: movie_news
 mode: default
 content:
   body:
