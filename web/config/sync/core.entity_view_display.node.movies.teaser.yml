@@ -1,0 +1,44 @@
+uuid: f9e50ee0-eb1c-4eaf-82ee-48428b6775c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.movies.body
+    - field.field.node.movies.field_buy_dvd
+    - field.field.node.movies.field_cinema_address
+    - field.field.node.movies.field_genre
+    - field.field.node.movies.field_imdb_url
+    - field.field.node.movies.field_movie_poster
+    - field.field.node.movies.field_movies_ratings
+    - field.field.node.movies.field_trailer_url
+    - node.type.movies
+  module:
+    - text
+    - user
+id: node.movies.teaser
+targetEntityType: node
+bundle: movies
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_buy_dvd: true
+  field_cinema_address: true
+  field_genre: true
+  field_imdb_url: true
+  field_movie_poster: true
+  field_movies_ratings: true
+  field_trailer_url: true

@@ -1,0 +1,33 @@
+uuid: 23340fa7-51a4-4725-8f39-40378b01a129
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_celeb_news_type
+    - node.type.celebrity_news
+    - taxonomy.vocabulary.news_type
+  content:
+    - 'taxonomy_term:news_type:ba86ef8e-7762-4a20-b164-f6ab007cf266'
+id: node.celebrity_news.field_celeb_news_type
+field_name: field_celeb_news_type
+entity_type: node
+bundle: celebrity_news
+label: 'News type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: ba86ef8e-7762-4a20-b164-f6ab007cf266
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_type: news_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

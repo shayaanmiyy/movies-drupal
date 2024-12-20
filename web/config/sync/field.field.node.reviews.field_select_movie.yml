@@ -1,0 +1,29 @@
+uuid: 5ecdf90e-b8ed-4e2c-8a65-a84c5816ac9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_select_movie
+    - node.type.movies
+    - node.type.reviews
+id: node.reviews.field_select_movie
+field_name: field_select_movie
+entity_type: node
+bundle: reviews
+label: 'Select Movie'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      movies: movies
+    sort:
+      field: status
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
