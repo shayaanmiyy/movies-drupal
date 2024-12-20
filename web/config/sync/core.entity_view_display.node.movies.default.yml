@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.movies.field_genre
     - field.field.node.movies.field_imdb_url
     - field.field.node.movies.field_movie_poster
+    - field.field.node.movies.field_movies_ratings
     - field.field.node.movies.field_trailer_url
     - node.type.movies
   module:
@@ -77,6 +78,15 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 107
+    region: content
+  field_movies_ratings:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
     region: content
   field_trailer_url:
     type: link

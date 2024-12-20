@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.movies.field_genre
     - field.field.node.movies.field_imdb_url
     - field.field.node.movies.field_movie_poster
+    - field.field.node.movies.field_movies_ratings
     - field.field.node.movies.field_trailer_url
     - image.style.thumbnail
     - node.type.movies
@@ -55,14 +56,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_genre:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 126
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_imdb_url:
     type: link_default
@@ -79,6 +76,13 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_movies_ratings:
+    type: number
+    weight: 128
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_trailer_url:
     type: link_default

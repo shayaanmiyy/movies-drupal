@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.movies.field_genre
     - field.field.node.movies.field_imdb_url
     - field.field.node.movies.field_movie_poster
+    - field.field.node.movies.field_movies_ratings
     - field.field.node.movies.field_trailer_url
     - node.type.movies
   module:
@@ -39,4 +40,5 @@ hidden:
   field_genre: true
   field_imdb_url: true
   field_movie_poster: true
+  field_movies_ratings: true
   field_trailer_url: true
