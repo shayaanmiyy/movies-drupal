@@ -1,0 +1,40 @@
+# Main theme library.
+global:
+  js:
+    js/moviesflix.js: {}
+    js/main.js: {}
+    vendor/bootstrap/js/bootstrap.min.js: {}
+    # vendor/aos/aos.js: {}
+  css:
+    base:
+      css/base/elements.css: {}
+      css/base/main.css: {}
+      css/base/drupal.css: {}
+      vendor/bootstrap/css/bootstrap.min.css: {}
+      vendor/bootstrap-icons/bootstrap-icons.min.css: {}
+      # vendor/aos/aos.css: {}
+      //fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cardo:ital,wght@0,400;0,700;1,400;1,700&display=swap: {link: external}
+
+    component:
+      css/component/block.css: {}
+      css/component/breadcrumb.css: {}
+      css/component/field.css: {}
+      css/component/form.css: {}
+      css/component/header.css: {}
+      css/component/menu.css: {}
+      css/component/messages.css: {}
+      css/component/node.css: {}
+      css/component/sidebar.css: {}
+      css/component/table.css: {}
+      css/component/tabs.css: {}
+      css/component/buttons.css: {}
+    layout:
+      css/layout/layout.css: {}
+    theme:
+      css/theme/print.css: { media: print }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.tab
+    - drupal:twig_tweak

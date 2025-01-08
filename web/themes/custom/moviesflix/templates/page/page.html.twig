@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+      <title>
+        {{ head_title|safe_join(' | ') }}
+      </title>
+      <css-placeholder token="{{ placeholder_token }}">
+        <js-placeholder token="{{ placeholder_token }}"></head>
+        <body{{ attributes }}>
+          {{ page_top }}
+          {{ include('@moviesflix/templates/partials/header.html.twig') }}
+          <main role="main" class="container">
+            <a id="main-content" tabindex="-1"></a>
+            <div class="layout-content">
+              {{ page.cta_section }}
+              {{ page.content }}
+            </div>
+            <div class="row">
+              {% if page.sidebar_first %}
+                <aside class="layout-sidebar-first col-md-6" role="complementary">
+                  {{ page.sidebar_first }}
+                </aside>
+              {% endif %}
+              {% if page.sidebar_second %}
+                <aside class="layout-sidebar-second col-md-6" role="complementary">
+                  {{ page.sidebar_second }}
+                </aside>
+              {% endif %}
+            </div>
+          </main>
+          <aside class="">
+          <div class="login-aside">
+            {{ page.aside.moviesflix_userlogin }}
+          </div>
+          <div class="recommended-block">
+            {{ page.aside.moviesflix_views_block__recommended_content_block_1 }}
+          </div>
+          </aside>
+          {{ include('@moviesflix/templates/partials/footer.html.twig') }}
+          {{ page_bottom }}
+          <js-bottom-placeholder token="{{ placeholder_token }}"></body>
+        </html>
+      </body>
+      

@@ -1,0 +1,36 @@
+<article class="node node--teaser node--movie">
+
+  <!-- Title Section -->
+  <div class="movie-title">
+    <h3>
+        <a href="{{ url }}" class="movie-title-link">{{ label }}</a>
+    </h3>
+  </div>
+  {# Add field in content types multivalued Fields  #}
+  <!-- Links Section -->
+  <div class="movie-links d-flex justify-content-between">
+    {% if content.field_imdb_url[0] %}
+      <a href="{{ content.field_imdb_url[0]['#url'] }}" class="btn btn-link" target="_blank">IMDB</a>
+    {% endif %}
+    {% if content.field_trailer_url[0] %}
+      <a href="{{ content.field_trailer_url[0]['#url'] }}" class="btn btn-link" target="_blank">Trailer</a>
+    {% endif %}
+    {% if content.field_buy_dvd[0] %}
+      <a href="{{ content.field_buy_dvd[0]['#url'] }}" class="btn btn-link" target="_blank">Buy DVD</a>
+    {% endif %}
+    {% if content.field_cinema_address[0] %}
+      <a href="{{ content.field_cinema_address[0]['#url'] }}" class="btn btn-link" target="_blank">Theatre Location</a>
+    {% endif %}
+  </div>
+
+  <!-- Image and Body Section -->
+  <div class="movie-content d-flex mt-4 mb-4">
+    <div class="movie-image">
+      {{ content.field_movie_poster }}
+    </div>
+    <div class="movie-body ms-4">
+      {{ content.body }}
+    </div>
+  </div>
+
+</article>
