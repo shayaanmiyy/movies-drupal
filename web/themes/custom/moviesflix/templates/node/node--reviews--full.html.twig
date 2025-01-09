@@ -11,20 +11,23 @@
     </p>
   </div>
 
-  <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4 gx-lg-5">
-
-      <div class="col-lg-6">
-        <div class="pricing-item d-flex justify-content-between">
-          <h3>
-            Ratings
-          </h3>
-          <h4>
-            {{ content.field_select_movie[0]['#node'].field_movies_ratings.value }}
-          </h4>
-        </div>
-      </div>
-
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 gx-lg-5">
+        {% for link in content.field_select_movie[0]['#node'].field_reference_links %}
+        {% if link.uri is not empty and link.title is not empty %}
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>
+                {{ link.title }}
+              </h3>
+              <h4>
+                <a href="{{ link.uri }}" class="movie-section__link btn btn-link">{{ link.title }}</a>
+              </h4>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+  
       <div class="col-lg-6">
         <div class="pricing-item d-flex justify-content-between">
           <h3>
