@@ -6,7 +6,6 @@
     </h2>
     <p>
       Reviews on
-      {# {{ node.title.value }} #}
       {{ content.field_select_movie[0]['#node'].title.value }}
     </p>
   </div>
@@ -27,61 +26,6 @@
           </div>
         {% endif %}
       {% endfor %}
-  
-      <div class="col-lg-6">
-        <div class="pricing-item d-flex justify-content-between">
-          <h3>
-            IMDB URL
-          </h3>
-          {% set imdb_url = content.field_select_movie[0]['#node'].field_imdb_url.uri %}
-          {% if imdb_url %}
-            <h4>
-              <a href="{{ imdb_url }}" target="_blank" rel="noopener noreferrer">
-                Visit IMDB
-              </a>
-            </h4>
-          {% else %}
-            <h4>
-              No URL available
-            </h4>
-          {% endif %}
-        </div>
-      </div>
-
-      {# <div class="col-lg-6">
-        <div class="pricing-item d-flex justify-content-between">
-        <h3>Buy DVD</h3>
-        {% set dvd_url = content.field_select_movie[0]['#node'].field_buy_dvd.value %}
-        {% if dvd_url %}
-        <h4><a href="{{ dvd_url }}" target="_blank" rel="noopener noreferrer">Buy Here</a></h4>
-        {% else %}
-        <h4>No URL available</h4>
-        {% endif %}
-        </div>
-      </div> #}
-
-      {# <div class="col-lg-6">
-        <div class="pricing-item d-flex justify-content-between">
-        <h3>Trailer URL</h3>
-        {% set trailer_url = content.field_select_movie[0]['#node'].field_trailer_url.value %}
-        {% if trailer_url %}
-        <h4><a href="{{ trailer_url }}" target="_blank" rel="noopener noreferrer">Watch Trailer</a></h4>
-        {% else %}
-        <h4>No Trailer URL available</h4>
-        {% endif %}
-        </div>
-      </div> #}
-
-      <div class="col-lg-6">
-        <div class="pricing-item d-flex justify-content-between">
-          <h3>
-            Theatre Location
-          </h3>
-          <h4>
-            {{ content.field_select_movie[0]['#node'].field_cinema_address.value }}
-          </h4>
-        </div>
-      </div>
 
       <div class="col-lg-6">
         <div class="pricing-item d-flex justify-content-between">
@@ -100,7 +44,23 @@
           {% endif %}
         </div>
       </div>
-
+      
+      <div class="col-lg-6">
+      <div class="pricing-item d-flex justify-content-between">
+        <h3>Released Date</h3>
+          {% set release_date = content.field_select_movie[0]['#node'].field_released_date.value %}
+          {% if release_date %}
+            <h4>
+              {{ release_date|date('d/m/Y') }}
+            </h4>
+          {% else %}
+            <h4>
+              No Release Date Available
+            </h4>
+          {% endif %}
+      </div>
+    </div>
+    
     </div>
   </div>
 

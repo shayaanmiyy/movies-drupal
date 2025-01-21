@@ -1,0 +1,76 @@
+/* Table container for responsive design */
+.table-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+/* General table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Table header styling */
+table th {
+  background-color: #000;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 2px solid #dedede;
+  font-weight: bold;
+}
+
+/* Table body styling */
+table td {
+  color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #3b3b3b;
+}
+
+/* Alternate row colors */
+table tr:nth-child(even) {
+  background-color: #2c2c2c;
+}
+
+table tr:nth-child(odd) {
+  background-color: #020202;
+}
+
+/* Hover effect for rows */
+table tr:hover {
+  background-color: #686868;
+}
+
+/* Add border around the table */
+table {
+  border: 1px solid #2e2e2e;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Style links in table */
+table a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+/* Center align specific columns (optional) */
+table td.center,
+table th.center {
+  text-align: center;
+}
+
+/* Right align specific columns (optional) */
+table td.right,
+table th.right {
+  text-align: right;
+}

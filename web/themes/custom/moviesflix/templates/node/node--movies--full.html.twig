@@ -58,22 +58,6 @@
           
           <div class="col-lg-4">
             {{ content.field_movie_poster }}
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-            <div class="mt-3">
-            {% if display_submitted %}
-            <div class="node__meta">
-              {{ author_picture }}
-              {% block submitted %}
-                <em{{ author_attributes }}>
-                  {% trans %}
-                    Submitted by {{ author_name }} on {{ date }}
-                  {% endtrans %}
-                </em>
-              {% endblock %}
-              {{ metadata }}
-            </div>
-          {% endif %}
-          </div>
           </div>
 
           <div class="col-lg-5 content">

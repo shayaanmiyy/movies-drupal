@@ -4,6 +4,8 @@ base theme: stark
 description: A flexible theme with a responsive, mobile-first layout.
 package: yes
 core_version_requirement: ^10
+default_logo: true
+logo_path: ''
 libraries:
   - moviesflix/global
 regions:

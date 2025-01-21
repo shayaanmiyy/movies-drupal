@@ -17,6 +17,8 @@ global:
 
     component:
       css/component/block.css: {}
+      css/component/hero.css: {}
+      css/component/page-title.css: {}
       css/component/breadcrumb.css: {}
       css/component/field.css: {}
       css/component/form.css: {}
@@ -28,6 +30,8 @@ global:
       css/component/table.css: {}
       css/component/tabs.css: {}
       css/component/buttons.css: {}
+      css/component/preloader.css: {}
+      css/component/footer.css: {}
     layout:
       css/layout/layout.css: {}
     theme:
@@ -38,3 +42,8 @@ global:
     - core/drupalSettings
     - core/drupal.tab
     - drupal:twig_tweak
+
+contact-us-form: 
+  css:
+    component:
+      css/component/contact-form.css: {}

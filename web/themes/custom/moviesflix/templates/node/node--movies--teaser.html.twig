@@ -1,22 +1,17 @@
 <article class="node node--teaser node--movie">
 
-  <!-- Title Section -->
-  <div class="movie-title">
+  <div class="movie-title mt-3 d-flex gap-4 align-items-center">
     <h3>
-        <a href="{{ url }}" class="movie-title-link">{{ label }}</a>
+      <a href="{{ url }}" class="movie-title-link">{{ label }}</a>
     </h3>
-  </div>
-  {# Add field in content types multivalued Fields  #}
-  <!-- Links Section -->
-  <div class="movie-links d-flex justify-content-between">
-    {% for link in content.field_reference_links %}
-    {% if link['#url'] is not empty and link['#title'] is not empty %}
-      <a href="{{ link['#url'] }}" class="movie-section__link btn btn-link">{{ link['#title'] }}</a>
+    {% if node is defined and node.created.value is not empty %}
+    <span class="divider">|</span>
+    <span class="movie-created-date text-light">
+        Created on {{ node.created.value|date("F j, Y") }}
+    </span>
     {% endif %}
-  {% endfor %}
   </div>
 
-  <!-- Image and Body Section -->
   <div class="movie-content d-flex mt-4 mb-4">
     <div class="movie-image">
       {{ content.field_movie_poster }}
@@ -24,6 +19,14 @@
     <div class="movie-body ms-4">
       {{ content.body }}
     </div>
+  </div>
+
+  <div class="movie-links row">
+    {% for link in content.field_reference_links %}
+      {% if link['#url'] is not empty and link['#title'] is not empty %}
+        <a href="{{ link['#url'] }}" class="movie-section__link btn btn-secondary col-2 m-2 border">{{ link['#title'] }}</a>
+      {% endif %}
+    {% endfor %}
   </div>
 
 </article>

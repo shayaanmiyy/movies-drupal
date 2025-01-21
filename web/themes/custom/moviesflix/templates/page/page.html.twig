@@ -14,7 +14,7 @@
             <a id="main-content" tabindex="-1"></a>
             <div class="layout-content">
               {{ page.cta_section }}
-              {{ page.content }}
+              {{ page.content }} 
             </div>
             <div class="row">
               {% if page.sidebar_first %}
@@ -30,12 +30,7 @@
             </div>
           </main>
           <aside class="">
-          <div class="login-aside">
-            {{ page.aside.moviesflix_userlogin }}
-          </div>
-          <div class="recommended-block">
-            {{ page.aside.moviesflix_views_block__recommended_content_block_1 }}
-          </div>
+            {{ page.aside }}
           </aside>
           {{page.footer}}
           {{ page_bottom }}
