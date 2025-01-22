@@ -49,14 +49,22 @@
   /**
    * Toggle mobile nav dropdowns
    */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
       e.preventDefault();
+  
+      document.querySelectorAll('.navmenu .dropdown-active').forEach(openMenu => {
+        if (openMenu !== this.parentNode.nextElementSibling) {
+          openMenu.classList.remove('dropdown-active');
+          openMenu.previousElementSibling.classList.remove('active');
+        }
+      });
+  
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
     });
   });
+  
 
   /**
    * Web Accessible
@@ -67,14 +75,7 @@
   
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
-        navMenu.classList.remove("active"); // Adjust based on your menu's visibility class
-      }
-    });
-  
-    // Optional: Close menu when clicking outside of it
-    document.addEventListener("click", function (event) {
-      if (!navMenu.contains(event.target) && !mobileNavToggle.contains(event.target)) {
-        navMenu.classList.remove("active");
+        mobileNavToggle.click();
       }
     });
   });
