@@ -1,0 +1,7 @@
+name: 'Custom Login Block'
+type: module
+description: 'Provides a custom login block for anonymous users.'
+core_version_requirement: ^10 || ^9
+package: Custom
+dependencies:
+  - drupal:user

@@ -59,6 +59,28 @@
   });
 
   /**
+   * Web Accessible
+   */
+  document.addEventListener("DOMContentLoaded", function () {
+    const navMenu = document.getElementById("navmenu");
+    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+  
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        navMenu.classList.remove("active"); // Adjust based on your menu's visibility class
+      }
+    });
+  
+    // Optional: Close menu when clicking outside of it
+    document.addEventListener("click", function (event) {
+      if (!navMenu.contains(event.target) && !mobileNavToggle.contains(event.target)) {
+        navMenu.classList.remove("active");
+      }
+    });
+  });
+  
+
+  /**
    * Preloader
    */
   const preloader = document.querySelector('#preloader');
