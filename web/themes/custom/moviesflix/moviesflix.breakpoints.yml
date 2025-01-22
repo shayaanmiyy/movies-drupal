@@ -1,0 +1,39 @@
+moviesflix.xs:
+  label: 'Extra Small (xs)'
+  mediaQuery: 'all and (max-width: 575px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+
+moviesflix.sm:
+  label: 'Small (sm)'
+  mediaQuery: 'all and (min-width: 576px) and (max-width: 767px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+
+moviesflix.md:
+  label: 'Medium (md)'
+  mediaQuery: 'all and (min-width: 768px) and (max-width: 991px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+
+moviesflix.lg:
+  label: 'Large (lg)'
+  mediaQuery: 'all and (min-width: 992px) and (max-width: 1199px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+
+moviesflix.xl:
+  label: 'Extra Large (xl)'
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 2x

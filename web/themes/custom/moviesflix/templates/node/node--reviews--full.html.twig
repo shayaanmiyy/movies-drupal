@@ -1,0 +1,104 @@
+
+<section id="pricing" class="pricing section">
+  <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+    <h2>
+      Reviews
+    </h2>
+    <p>
+      Reviews on
+      {{ content.field_select_movie[0]['#node'].title.value }}
+    </p>
+  </div>
+
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 gx-lg-5">
+        {% for link in content.field_select_movie[0]['#node'].field_reference_links %}
+        {% if link.uri is not empty and link.title is not empty %}
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>
+                {{ link.title }}
+              </h3>
+              <h4>
+                <a href="{{ link.uri }}" class="movie-section__link btn btn-link">{{ link.title }}</a>
+              </h4>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <div class="col-lg-6">
+        <div class="pricing-item d-flex justify-content-between">
+          <h3>
+            Genre
+          </h3>
+          {% set genre_entities = content.field_select_movie[0]['#node'].field_genre.entity %}
+          {% if genre_entities %}
+            <h4>
+              {{ genre_entities.label }}
+            </h4>
+          {% else %}
+            <h4>
+              No Genre Available
+            </h4>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+      <div class="pricing-item d-flex justify-content-between">
+        <h3>Released Date</h3>
+          {% set release_date = content.field_select_movie[0]['#node'].field_released_date.value %}
+          {% if release_date %}
+            <h4>
+              {{ release_date|date('d/m/Y') }}
+            </h4>
+          {% else %}
+            <h4>
+              No Release Date Available
+            </h4>
+          {% endif %}
+      </div>
+    </div>
+    
+    </div>
+  </div>
+
+  <div class="container my-5">
+  <div class="row">
+    <!-- Movie Poster/Image -->
+    <div class="col-md-4">
+      <img 
+        src="{{ content.field_select_movie[0]['#node'].field_movie_poster.entity.uri.value | file_url }}" 
+        alt="{{ content.field_select_movie[0]['#node'].title.value }}" 
+        class="img-fluid rounded shadow-sm"
+      />
+    </div>
+
+    <!-- Movie Body Content -->
+    <div class="col-md-8">
+    {% for movie in movies %}
+    <div class="col-lg-6">
+      <h2>
+        <a href="{{ movie.url }}">{{ movie.title }}</a>
+      </h2>
+    </div>
+  {% endfor %}
+      {{ content.field_select_movie[0]['#node'].body.value | raw}}
+    </div>
+  </div>
+
+  <!-- Reviews Section -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <h3 class="mb-4">Reviews</h3>
+      
+        <div class="review mb-3 shadow-sm text-light">
+          <p class="review-body">{{ content.body }}</p>
+          <small class="text-light">Posted on {{ content.created|date("F j, Y") }}</small>
+        </div>
+    </div>
+  </div>
+</div>
+
+</section>

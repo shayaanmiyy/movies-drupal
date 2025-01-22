@@ -1,0 +1,97 @@
+{#
+/**
+ * @file
+ * Bootstrap's theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only "getter" methods (method names starting with "get", "has", or "is")
+ *   and a few common methods such as "id" and "label" are available.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all, or print a subset.
+ * - author_picture: The node author user entity, rendered using the "compact" view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Attributes for the title tag.
+ * - content_attributes: Attributes for the main content tag.
+ * - author_attributes: Attributes for the author element.
+ * - view_mode: Current view mode, e.g., "teaser" or "full".
+ * - logged_in: Flag indicating if the user is logged in.
+ * - is_admin: Flag indicating if the user is an admin.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{{ attach_library('bootstrap/node') }}
+
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'clearfix',
+] %}
+
+<article{{ attributes.addClass(classes) }}>
+
+  <header>
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h2{{ title_attributes.addClass('node__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
+  </header>
+
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'movies-section') }}>
+    <section id="about" class="about section">
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          
+          <div class="col-lg-4">
+            {{ content.field_movie_poster }}
+          </div>
+
+          <div class="col-lg-5 content">
+          <div class="movie-section__links">
+          <ul>
+            {% for link in content.field_reference_links %}
+              {% if link['#url'] is not empty and link['#title'] is not empty %}
+                <li>
+                  <i class="bi bi-chevron-right"></i>
+                  <strong>{{ link['#title'] }}</strong>: 
+                  <a href="{{ link['#url'] }}" class="movie-section__link btn btn-link">{{ link['#title'] }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          <ul>
+            {% for field, label in {
+              'field_genre': 'Genre',
+              'field_movies_ratings': 'Ratings',
+            } %}
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <span class="movies-label">{{ content[field] }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+          </div>            
+            <p class="py-3">
+              {{ content.body }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</article>

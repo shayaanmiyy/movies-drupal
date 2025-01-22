@@ -1,0 +1,48 @@
+<nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+  <ul class="pagination justify-content-center">
+    {% if items.first %}
+      <li class="page-item">
+        <a href="{{ items.first.href }}" class="page-link">
+          <i class="bi bi-chevron-double-left"></i> {{ items.first.text }}
+        </a>
+      </li>
+    {% endif %}
+
+    {% if items.previous %}
+      <li class="page-item">
+        <a href="{{ items.previous.href }}" class="page-link">
+          <i class="bi bi-chevron-left"></i> {{ items.previous.text }}
+        </a>
+      </li>
+    {% endif %}
+
+    {% for item in items.pages %}
+
+      <li class="page-item {% if item.is_current %}active{% endif %}">
+        {% if not item.is_current %}
+          <a href="{{ item.href }}" class="page-link">
+            {{ loop.index }}
+          </a>
+        {% else %}
+          <span class="page-link" aria-current="page">{{ item.text }}</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+
+    {% if items.next %}
+      <li class="page-item">
+        <a href="{{ items.next.href }}" class="page-link">
+          {{ 'Next'|t }} <i class="bi bi-chevron-right"></i>
+        </a>
+      </li>
+    {% endif %}
+
+    {% if items.last %}
+      <li class="page-item">
+        <a href="{{ items.last.href }}" class="page-link">
+          {{ 'Last'|t }} <i class="bi bi-chevron-double-right"></i>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>

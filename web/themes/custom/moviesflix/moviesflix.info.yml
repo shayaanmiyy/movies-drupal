@@ -1,0 +1,19 @@
+name: Movies Flix
+type: theme
+base theme: stark
+description: A flexible theme with a responsive, mobile-first layout.
+package: yes
+core_version_requirement: ^10
+default_logo: true
+logo_path: ''
+libraries:
+  - moviesflix/global
+regions:
+  header: 'Header'
+  sub_header: 'Sub Header'
+  cta_section: 'CTA Section'
+  content: 'Content'
+  sidebar_first: 'Left Side'
+  sidebar_second: 'Right Side'
+  aside: 'Aside'
+  footer: 'Footer'
