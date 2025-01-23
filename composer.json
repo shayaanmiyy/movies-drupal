@@ -19,6 +19,7 @@
         "drupal/admin_toolbar": "^3.5",
         "drupal/block_classes": "^1.0",
         "drupal/bootstrap": "^5.0",
+        "drupal/clientside_validation": "^4.1",
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-project-message": "^10.3",
         "drupal/core-recommended": "^10.3",

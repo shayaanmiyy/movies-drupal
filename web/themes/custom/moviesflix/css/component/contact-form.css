@@ -86,3 +86,9 @@
 .contact .php-email-form button[type=submit]:hover {
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
 }
+
+.error {
+  color: #ed3c3c;
+  font-weight: 600;
+  margin-top: 10px;
+}
