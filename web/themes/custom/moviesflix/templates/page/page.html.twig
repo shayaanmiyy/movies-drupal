@@ -10,6 +10,7 @@
         <body{{ attributes }}>
           {{ page_top }}
           {{page.header}}
+          {# HTML Main Semantic Tag for the Main Content of the Page #}
           <main role="main" class="container">
             <a id="main-content" tabindex="-1"></a>
             <div class="layout-content">
@@ -29,6 +30,7 @@
               {% endif %}
             </div>
           </main>
+          {# HTML Aside Tag for Aside Content of the Page #}
           <aside class="">
             {{ page.aside }}
           </aside>
