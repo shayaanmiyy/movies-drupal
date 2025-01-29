@@ -1,0 +1,22 @@
+uuid: 4822aa56-3178-4d33-8179-f9ac161bee64
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: movies_alias
+label: 'Movies Alias'
+type: 'canonical_entities:node'
+pattern: '/movies/[node:title]'
+selection_criteria:
+  d77f3dea-4f34-40f8-a783-19b921e76d3f:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: d77f3dea-4f34-40f8-a783-19b921e76d3f
+    context_mapping:
+      node: node
+    bundles:
+      movies: movies
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,29 @@
+uuid: a42b3411-ac24-432e-89df-3814f1a61851
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_classes
+    - quicktabs
+    - system
+  theme:
+    - moviesflix
+third_party_settings:
+  block_classes:
+    block_class: my-5
+id: moviesflix_quicktabsnewstabs_2
+theme: moviesflix
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'quicktabs_block:news_tabs'
+settings:
+  id: 'quicktabs_block:news_tabs'
+  label: 'News Tabs'
+  label_display: visible
+  provider: quicktabs
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

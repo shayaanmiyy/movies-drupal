@@ -1,0 +1,28 @@
+uuid: 34eee549-38ca-4f5f-8ebd-1d81687f7b84
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.recommended_content_2
+  module:
+    - block_classes
+    - views
+  theme:
+    - moviesflix
+third_party_settings:
+  block_classes:
+    block_class: recommended-block
+id: moviesflix_views_block__recommended_content_2_block_1
+theme: moviesflix
+region: aside
+weight: 0
+provider: null
+plugin: 'views_block:recommended_content_2-block_1'
+settings:
+  id: 'views_block:recommended_content_2-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

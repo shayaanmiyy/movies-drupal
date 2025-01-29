@@ -1,0 +1,22 @@
+uuid: ef9afcbc-27ab-4f10-9757-ece7a8d98662
+langcode: en
+status: true
+dependencies:
+  theme:
+    - stark
+_core:
+  default_config_hash: 8NiNh48tRzu1-Sl5LUG0Id8JSHgcDugRRxXnNVgufV8
+id: stark_primary_local_tasks
+theme: stark
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

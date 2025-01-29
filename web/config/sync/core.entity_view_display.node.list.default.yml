@@ -1,0 +1,57 @@
+uuid: a0f56ae0-ae39-44f3-9e1c-cc5de9fdf9ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.list.body
+    - field.field.node.list.field_description
+    - field.field.node.list.field_list_creation_date
+    - field.field.node.list.field_movies
+    - node.type.list
+  module:
+    - datetime
+    - text
+    - user
+id: node.list.default
+targetEntityType: node
+bundle: list
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_list_creation_date:
+    type: datetime_custom
+    label: inline
+    settings:
+      timezone_override: ''
+      date_format: d-m-Y
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_movies:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

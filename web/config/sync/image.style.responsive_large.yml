@@ -1,0 +1,15 @@
+uuid: 41bf1856-5cc6-46a0-9cf5-a118166a0234
+langcode: en
+status: true
+dependencies: {  }
+name: responsive_large
+label: responsive_large
+effects:
+  69b7556e-2f0a-47cb-9b40-339a5817a63a:
+    uuid: 69b7556e-2f0a-47cb-9b40-339a5817a63a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 220
+      height: 220
+      anchor: center-center

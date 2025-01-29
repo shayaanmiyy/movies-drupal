@@ -1,0 +1,18 @@
+uuid: 2b59a11f-b2c9-46e6-9fd2-51646c116a81
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Movie & Celeb News'
+type: movie_news
+description: 'Here We will show case you latest new trending on the Media Today okay?'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,21 @@
+uuid: 861298a0-6687-4e4e-b5be-650de2b52490
+langcode: en
+status: true
+dependencies: {  }
+name: max_100p_x_220
+label: 'Max 366 x 220'
+effects:
+  ccd641aa-7d66-4405-8a43-a5e45120c3c6:
+    uuid: ccd641aa-7d66-4405-8a43-a5e45120c3c6
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 366
+      height: 220
+      anchor: center-center
+  74208ad0-83b2-40e7-800a-5881fb2399f1:
+    uuid: 74208ad0-83b2-40e7-800a-5881fb2399f1
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp
