@@ -47,9 +47,9 @@
 }
 
 .hero .btn-get-started {
-  color: var(--contrast-color);
+  color: var(--background-color);
   background: var(--accent-color);
-  font-weight: 400;
+  font-weight: 800;
   font-size: 14px;
   display: inline-block;
   padding: 12px 40px;
@@ -57,8 +57,16 @@
   transition: 0.5s;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .hero .btn-get-started:hover {
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
+}
+
+.bg-hero-img {
+  background-image: url('../../assets/img/IN-en-20250120-TRIFECTA-perspective_860a95da-c386-446e-af83-fef8ddd80803_medium.jpg');
+}
+.bg-overlay {
+  background: linear-gradient(12deg, rgba(0, 0, 0, 0.8500) 36.00%, rgba(0, 0, 0, 0.8465) 40.58%, rgba(0, 0, 0, 0.8361) 45.17%, rgba(0, 0, 0, 0.8187) 49.75%, rgba(0, 0, 0, 0.7944) 54.33%, rgba(0, 0, 0, 0.7632) 58.92%, rgba(0, 0, 0, 0.7250) 63.50%, rgba(0, 0, 0, 0.6868) 68.08%, rgba(0, 0, 0, 0.6556) 72.67%, rgba(0, 0, 0, 0.6313) 77.25%, rgba(0, 0, 0, 0.6139) 81.83%, rgba(0, 0, 0, 0.6035) 86.42%, rgba(0, 0, 0, 0.6000) 91.00%);
 }

@@ -78,6 +78,13 @@
       }
     });
   });
+
+  document.querySelector(".mobile-nav-toggle").addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      this.click();
+    }
+  });
+
   
 
   /**

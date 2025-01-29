@@ -1,30 +1,29 @@
 {% if is_front %}
-  <section id="hero" class="hero section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
-          <h2>
-            <span>
-              Welcome to
-            </span>
-            <span class="underlight">
-              MovieSite
-            </span>
-            , your go-to hub for
-            <span>
-              the latest Movies & Breaking News
-            </span>
-          </h2>
-          <p>
-            Discover the most updated reviews, previews, and behind-the-scenes insights into the world of entertainment. From blockbuster hits to indie gems, we’ve got it all covered.
-          </p>
-          <a href="/contact-us" class="btn-get-started">
-            Contact Us
-            <br></a>
+  <div class="bg-hero-img ">
+    <section id="hero" class="hero section container-fluid bg-overlay">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
+            <h2>
+              <span>
+                Welcome to
+              </span>
+              MovieSite, your go-to hub for
+              <span>
+                the latest Movies & Breaking News
+              </span>
+            </h2>
+            <p>
+              Discover the most updated reviews, previews, and behind-the-scenes insights into the world of entertainment. From blockbuster hits to indie gems, we’ve got it all covered.
+            </p>
+            <a href="/contact-us" class="btn-get-started">
+              Contact Us
+              <br></a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   {% else %}
     <div class="page-title aos-init aos-animate mb-5" data-aos="fade">
       <div class="heading">
@@ -34,9 +33,15 @@
               <h1>
                 {{ content['#title'] }}
               </h1>
-              <p class="mb-0">
-              Discover the most updated reviews, previews, and behind-the-scenes insights into the world of entertainment. From blockbuster hits to indie gems, we’ve got it all covered.
-              </p>
+              {% if page_description %}
+                <p class="page-description mb-0">
+                  {{ page_description }}
+                </p>
+              {% else %}
+                <p class="mb-0">
+                  Discover the most updated reviews, previews, and behind-the-scenes insights into the world of entertainment. From blockbuster hits to indie gems, we’ve got it all covered.
+                </p>
+              {% endif %}
               <a href="/" class="cta-btn">
                 Return Home
                 <br></a>

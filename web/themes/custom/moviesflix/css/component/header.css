@@ -100,6 +100,7 @@
 
   .navmenu li {
     position: relative;
+    list-style-type: none
   }
 
   .navmenu a,

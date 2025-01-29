@@ -48,9 +48,9 @@ body {
 }
 
 a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: 0.3s;
+  color: var(--default-color);
+  text-decoration: none !important;
+  transition: 0.3s !important;
 }
 
 a:hover {
@@ -287,6 +287,10 @@ section,
   padding: 0px;
 }
 
+.quicktabs-tabs {
+  margin-bottom: 0 !important;
+}
+
 .tabsbar ul.quicktabs-tabs {
   padding-left: 0;
 }
@@ -308,4 +312,28 @@ section,
 
 #block-moviesflix-customloginblock h2 {
   display: none;
+}
+
+.az-pagination {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.az-pagination a {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 2px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.az-pagination a:hover {
+  background-color: #0056b3;
+}
+
+
+li:has(.error-with-backtrace) {
+  display: none !important;
 }

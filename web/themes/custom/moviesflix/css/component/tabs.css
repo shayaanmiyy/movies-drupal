@@ -1,0 +1,8 @@
+.quicktabs-tabpage a {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px 15px; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

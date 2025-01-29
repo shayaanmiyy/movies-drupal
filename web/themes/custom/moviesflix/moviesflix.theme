@@ -27,7 +27,13 @@ function moviesflix_preprocess_html(array &$variables): void {
  * Implements hook_preprocess_HOOK() for page.html.twig.
  */
 function movies_theme_preprocess_page(array &$variables) {
-  // Check if the current page is the front page
+  if (\Drupal::routeMatch()->getRouteName() === 'entity.node.canonical') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface && $node->bundle() == 'basic_page') {
+      $description = $node->get('field_basic_page_description')->value;
+      $variables['page_description'] = $description;
+    }
+  }
 }
 
 /**
@@ -38,10 +44,21 @@ function moviesflix_preprocess_node(array &$variables): void {
 }
 
 
-function moviesflix_preprocess_block(&$variables):void {
+function moviesflix_preprocess_block(&$variables): void {
   $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
   $variables['logo'] = theme_get_setting('logo.url');
-
+  $description = \Drupal::service('tempstore.private')->get('moviesflix')->get('page_description');
+  if (empty($description)) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node && $node->getType() == 'page') {
+      $description = $node->get('field_basic_page_description')->value; // Adjust based on your field name
+    }
+  }
+  if (!empty($description)) {
+    $variables['page_description'] = $description;
+  } else {
+    $variables['page_description'] = '';
+  }
 }
 
 

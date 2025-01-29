@@ -48,6 +48,7 @@
 .contact .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
+  width: 100%;
   box-shadow: none;
   border-radius: 0;
   color: var(--default-color);
