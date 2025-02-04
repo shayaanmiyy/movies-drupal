@@ -10,7 +10,7 @@ table {
   border-collapse: collapse;
   margin-bottom: 20px;
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   background-color: #000;
   color: #fff;
 }
@@ -34,7 +34,7 @@ table td {
 
 /* Alternate row colors */
 table tr:nth-child(even) {
-  background-color: #2c2c2c;
+  background-color: #161616;
 }
 
 table tr:nth-child(odd) {
@@ -73,4 +73,13 @@ table th.center {
 table td.right,
 table th.right {
   text-align: right;
+}
+.quicktabs-tabpage a {
+
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px 15px; /* Adjust padding for better spacing */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
