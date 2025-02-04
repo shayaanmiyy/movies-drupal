@@ -180,6 +180,7 @@
 
   .navmenu .dropdown:hover > ul,
   .navmenu li:has(ul):hover > ul,
+  /* Focus Withing will keep the Dropdown Active preventing it from getting hidden */
   .navmenu li:has(ul):focus-within > ul,
   .dropdown a:focus-visible + ul {
       opacity: 1;
