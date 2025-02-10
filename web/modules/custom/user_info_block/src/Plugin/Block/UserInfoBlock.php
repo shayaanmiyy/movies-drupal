@@ -72,21 +72,19 @@ class UserInfoBlock extends BlockBase implements ContainerFactoryPluginInterface
    */
   public function build() {
     $user = User::load($this->currentUser->id());
-
     if ($user) {
       $username = $user->getDisplayName();
       $created_time = $user->getCreatedTime();
       $formatted_date = $this->dateFormatter->format($created_time, 'custom', 'Y-m-d H:i:s');
-
       return [
         '#markup' => $this->t('Username: @username<br>Account Created: @date', [
           '@username' => $username,
           '@date' => $formatted_date,
         ]),
-        '#cache' => ['max-age' => 0], // Ensures the block always updates dynamically.
+        // Ensures the block always updates dynamically.
+        '#cache' => ['max-age' => 0],
       ];
     }
-
     return ['#markup' => $this->t('No user information available.')];
   }
 
