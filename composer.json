@@ -29,6 +29,7 @@
         "drupal/paragraphs": "^1.18",
         "drupal/pathauto": "^1.13",
         "drupal/quicktabs": "^4.0",
+        "drupal/responsive_tables_filter": "^2.0",
         "drupal/twig_tweak": "^3.4",
         "drupal/views_summary_tabs": "^1.0",
         "drupal/webform": "^6.2",
