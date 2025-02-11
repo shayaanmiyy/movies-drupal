@@ -1,0 +1,13 @@
+features:
+  node_user_picture: 0
+  comment_user_picture: 0
+  comment_user_verification: 0
+  favicon: 1
+custom_logo: {  }
+logo:
+  use_default: 0
+  path: 'public://vintage-film-production-camera-roll-logo-vector.jpg'
+favicon:
+  use_default: 0
+  path: 'public://illustration-negative-film-reel-roll-tapes-for-movie-cinema-video-logo-vector_0.jpg'
+  mimetype: image/jpeg

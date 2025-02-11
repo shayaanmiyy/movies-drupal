@@ -1,0 +1,40 @@
+uuid: 9492637e-4af6-4fbb-a646-99848edd2820
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.movies-site-menus
+  module:
+    - block_classes
+    - system
+    - user
+  theme:
+    - moviesflix
+third_party_settings:
+  block_classes:
+    block_class: navmenu
+id: moviesflix_moviessitemenus
+theme: moviesflix
+region: header
+weight: -10
+provider: null
+plugin: 'system_menu_block:movies-site-menus'
+settings:
+  id: 'system_menu_block:movies-site-menus'
+  label: 'Movies Site Menus'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator

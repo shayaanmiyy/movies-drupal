@@ -1,0 +1,22 @@
+uuid: 55ab9eee-31c7-49d8-9b5b-ae34194633e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: movies_news_alias
+label: 'Movies & Celeb News Alias'
+type: 'canonical_entities:node'
+pattern: '/news/movies-celeb/[node:title]'
+selection_criteria:
+  61c4a8e4-eaab-46cb-8eba-4e6f8869c0fe:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 61c4a8e4-eaab-46cb-8eba-4e6f8869c0fe
+    context_mapping:
+      node: node
+    bundles:
+      movie_news: movie_news
+selection_logic: and
+weight: -5
+relationships: {  }

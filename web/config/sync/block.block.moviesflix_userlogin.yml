@@ -1,0 +1,36 @@
+uuid: 6a8ae6c2-38f6-477c-97ea-b40988a6f435
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_classes
+    - system
+    - user
+  theme:
+    - moviesflix
+third_party_settings:
+  block_classes:
+    block_class: login-aside
+id: moviesflix_userlogin
+theme: moviesflix
+region: aside
+weight: -10
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  label_display: visible
+  provider: user
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

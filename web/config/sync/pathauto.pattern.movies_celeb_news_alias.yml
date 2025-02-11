@@ -1,0 +1,31 @@
+uuid: e11b24eb-3bde-42c5-a20e-5029727d237f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: movies_celeb_news_alias
+label: 'Movies & Celeb News Alias'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/news/movies/[node:title]'
+selection_criteria:
+  61c4a8e4-eaab-46cb-8eba-4e6f8869c0fe:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 61c4a8e4-eaab-46cb-8eba-4e6f8869c0fe
+    context_mapping:
+      node: node
+    bundles:
+      movie_news: movie_news
+  6ce1f1e8-deef-4f15-ac42-4cec28716582:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 6ce1f1e8-deef-4f15-ac42-4cec28716582
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      movie_news: movie_news
+selection_logic: and
+weight: -5
+relationships: {  }

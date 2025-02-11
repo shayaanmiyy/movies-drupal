@@ -1,0 +1,95 @@
+uuid: 0bd91ddc-628a-47c9-9e04-48efc9630637
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.movie_news.body
+    - field.field.node.movie_news.field_news_type
+    - node.type.movie_news
+  module:
+    - field_layout
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          5d0037fe-0597-4945-99fe-d91008d91fe5:
+            uuid: 5d0037fe-0597-4945-99fe-d91008d91fe5
+            region: content
+            configuration:
+              id: 'extra_field_block:node:movie_news:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          1e24e70b-141c-41db-940a-f266f7fbf762:
+            uuid: 1e24e70b-141c-41db-940a-f266f7fbf762
+            region: content
+            configuration:
+              id: 'field_block:node:movie_news:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          e744efbf-3df0-4a3d-b81e-1c3308736cd1:
+            uuid: e744efbf-3df0-4a3d-b81e-1c3308736cd1
+            region: content
+            configuration:
+              id: 'field_block:node:movie_news:field_news_type'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: node.movie_news.default
+targetEntityType: node
+bundle: movie_news
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_news_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,25 @@
+uuid: ae9111ed-8aef-4cc2-99e2-8eba334a5377
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d0806fc4-825f-4a5a-b404-bdd4648e30a6'
+  module:
+    - block_content
+  theme:
+    - moviesflix
+id: moviesflix_logo
+theme: moviesflix
+region: header
+weight: -11
+provider: null
+plugin: 'block_content:d0806fc4-825f-4a5a-b404-bdd4648e30a6'
+settings:
+  id: 'block_content:d0806fc4-825f-4a5a-b404-bdd4648e30a6'
+  label: Logo
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
