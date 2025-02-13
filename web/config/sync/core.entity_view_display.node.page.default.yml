@@ -4,10 +4,21 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_basic_page_description
     - node.type.page
   module:
+    - field_layout
+    - layout_builder
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
@@ -20,9 +31,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
   links:
-    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
-hidden: {  }
+hidden:
+  field_basic_page_description: true

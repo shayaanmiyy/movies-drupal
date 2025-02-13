@@ -1,0 +1,22 @@
+uuid: 6e66b426-87d6-47d1-8fd6-79bedea05c69
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - moviesflix
+_core:
+  default_config_hash: CiBjSwgbxabxP53O64ow0A0qaiek4K_ypLQ-jg4Xfn0
+id: moviesflix_content
+theme: moviesflix
+region: content
+weight: -8
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,26 @@
+uuid: 3d4d704a-90ee-4478-88e7-9298cfb17548
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - responsive_image
+_core:
+  default_config_hash: QiRvjTwfEjBpDYdS9xLtqCdkxL94sHoxTO2JBBdhDVQ
+name: max_1300x1300
+label: 'Max 1300x1300'
+effects:
+  e8c9d6ba-a017-4a87-9999-7ce52e138e1d:
+    uuid: e8c9d6ba-a017-4a87-9999-7ce52e138e1d
+    id: image_convert
+    weight: -9
+    data:
+      extension: webp
+  924a3daa-5663-4bd5-a7a3-979f02a71963:
+    uuid: 924a3daa-5663-4bd5-a7a3-979f02a71963
+    id: image_scale_and_crop
+    weight: -10
+    data:
+      width: 1300
+      height: 1300
+      anchor: center-center

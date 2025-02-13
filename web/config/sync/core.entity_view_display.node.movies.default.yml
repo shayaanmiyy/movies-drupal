@@ -1,0 +1,96 @@
+uuid: 111e5134-d737-48b2-af78-ad12c8ff4694
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.movies.body
+    - field.field.node.movies.field_genre
+    - field.field.node.movies.field_movie_poster
+    - field.field.node.movies.field_movies_ratings
+    - field.field.node.movies.field_reference_links
+    - field.field.node.movies.field_released_date
+    - node.type.movies
+  module:
+    - datetime
+    - field_layout
+    - image
+    - layout_builder
+    - link
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.movies.default
+targetEntityType: node
+bundle: movies
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_genre:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_movie_poster:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_movies_ratings:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_reference_links:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_released_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  layout_builder__layout: true

@@ -1,0 +1,21 @@
+uuid: fcddc82f-a246-471a-88d2-82f99e2114d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_list_creation_date
+    - node.type.list
+  module:
+    - datetime
+id: node.list.field_list_creation_date
+field_name: field_list_creation_date
+entity_type: node
+bundle: list
+label: 'List Creation Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

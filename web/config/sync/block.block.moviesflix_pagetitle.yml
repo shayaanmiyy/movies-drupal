@@ -1,0 +1,18 @@
+uuid: 1c138efe-7ac7-41e1-a962-091a22dade64
+langcode: en
+status: true
+dependencies:
+  theme:
+    - moviesflix
+id: moviesflix_pagetitle
+theme: moviesflix
+region: cta_section
+weight: -10
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

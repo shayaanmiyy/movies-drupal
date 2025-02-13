@@ -1,0 +1,7 @@
+name: 'API Data Block'
+description: 'Fetches data from an external API and displays it in a block.'
+type: module
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:block

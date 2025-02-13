@@ -1,0 +1,32 @@
+uuid: fbfa51a5-b6d8-4d79-b674-3143f36579fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest_reviews
+  module:
+    - node
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__latest_reviews_block_1
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:latest_reviews-block_1'
+settings:
+  id: 'views_block:latest_reviews-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      page: page

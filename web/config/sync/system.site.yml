@@ -2,13 +2,13 @@ _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: en
 uuid: f6f05117-d3f8-4556-b065-bdeaf78ac91e
-name: 'my Movies Site'
+name: 'My Movies Site'
 mail: shayaanmomin.sm@gmail.com
-slogan: ''
+slogan: 'Movies are Cuties'
 page:
   403: ''
   404: ''
-  front: /node
+  front: /node/11
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

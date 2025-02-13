@@ -1,0 +1,64 @@
+uuid: ea9611a6-77b6-4839-838b-998dcf6142b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.max_100p_x_220
+    - image.style.medium
+  theme:
+    - moviesflix
+id: movies_flix_responsive_image
+label: 'Movies Flix Responsive Image'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: medium
+    breakpoint_id: moviesflix.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium
+    breakpoint_id: moviesflix.xl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium
+    breakpoint_id: moviesflix.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium
+    breakpoint_id: moviesflix.lg
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium
+    breakpoint_id: moviesflix.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium
+    breakpoint_id: moviesflix.md
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium
+    breakpoint_id: moviesflix.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium
+    breakpoint_id: moviesflix.sm
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: max_100p_x_220
+    breakpoint_id: moviesflix.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: max_100p_x_220
+    breakpoint_id: moviesflix.xs
+    multiplier: 2x
+breakpoint_group: moviesflix
+fallback_image_style: '_original image_'
