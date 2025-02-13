@@ -1,0 +1,21 @@
+uuid: 945cb447-6f91-4924-9aca-ba8251bff4dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - api_data_block
+    - block_classes
+  theme:
+    - moviesflix
+id: moviesflix_apidatablock
+theme: moviesflix
+region: content
+weight: 0
+provider: null
+plugin: api_data_block
+settings:
+  id: api_data_block
+  label: 'API Data Block'
+  label_display: visible
+  provider: api_data_block
+visibility: {  }
