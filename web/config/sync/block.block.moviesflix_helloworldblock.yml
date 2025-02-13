@@ -1,0 +1,20 @@
+uuid: f41d93aa-af53-4a56-9e54-1d0391eab153
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello_world
+  theme:
+    - moviesflix
+id: moviesflix_helloworldblock
+theme: moviesflix
+region: content
+weight: 0
+provider: null
+plugin: hello_world_block
+settings:
+  id: hello_world_block
+  label: 'Hello World Block'
+  label_display: visible
+  provider: hello_world
+visibility: {  }
