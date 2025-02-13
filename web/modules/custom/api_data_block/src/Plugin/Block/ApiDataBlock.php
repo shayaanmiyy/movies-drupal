@@ -1,15 +1,11 @@
 <?php
 
 namespace Drupal\api_data_block\Plugin\Block;
-// Core BlockBase class to define a custom block.
+
 use Drupal\Core\Block\BlockBase;
-// Required for Dependency Injection.
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-// Symfony service container for Dependency Injection.
 use Symfony\Component\DependencyInjection\ContainerInterface;
-// Guzzle HTTP client for making external API requests.
 use GuzzleHttp\ClientInterface;
-// Exception handling for HTTP requests.
 use GuzzleHttp\Exception\RequestException;
 
 
@@ -22,7 +18,8 @@ use GuzzleHttp\Exception\RequestException;
  *   category = @Translation("Custom")
  * )
  */
-class ApiDataBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class ApiDataBlock extends BlockBase implements ContainerFactoryPluginInterface
+{
 
   /**
    * The HTTP client service.
@@ -43,7 +40,8 @@ class ApiDataBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * @param \GuzzleHttp\ClientInterface $http_client
    *   The HTTP client service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $http_client) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ClientInterface $http_client)
+  {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->httpClient = $http_client;
   }
@@ -51,7 +49,8 @@ class ApiDataBlock extends BlockBase implements ContainerFactoryPluginInterface 
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
+  {
     return new static(
       $configuration,
       $plugin_id,
@@ -63,29 +62,35 @@ class ApiDataBlock extends BlockBase implements ContainerFactoryPluginInterface 
   /**
    * {@inheritdoc}
    */
-  public function build() {
-    $output = '<p>No data available.</p>';
+  public function build()
+  {
+    $output = [
+      '#type' => 'markup',
+      '#markup' => $this->t('No data available.'),
+    ];
     // Example API
     $url = 'https://jsonplaceholder.typicode.com/users';
     try {
       $response = $this->httpClient->request('GET', $url, ['timeout' => 5]);
       $data = json_decode($response->getBody(), TRUE);
       if (!empty($data)) {
-        $output = '<ul>';
+        $items = [];
         foreach ($data as $user) {
-          $output .= '<li>' . htmlspecialchars($user['name']) . ' (' . htmlspecialchars($user['email']) . ')</li>';
+          $items[] = $this->t('@name (@email)', [
+            '@name' => $user['name'],
+            '@email' => $user['email'],
+          ]);
         }
-        $output .= '</ul>';
+        $output = [
+          '#theme' => 'item_list',
+          '#items' => $items,
+          '#title' => $this->t('User List from API'),
+        ];
       }
+    } catch (RequestException $e) {
+      $this->messenger->addError($this->t('Failed to fetch data from API.'));
     }
-    catch (RequestException $e) {
-      $output = '<p>Failed to fetch data.</p>';
-    }
-    return [
-      '#markup' => $output,
-      // Ensures fresh data on every request.
-      '#cache' => ['max-age' => 0],
-    ];
+    return $output;
   }
 
 }
