@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_preprocess_page().
+ *
+ * Adds "Hello, World!" to the front page.
+ */
+function hello_world_preprocess_page(&$variables) {
+  // Get the current route.
+  $route_match = \Drupal::routeMatch();
+
+  // Check if we are on the front page.
+  if ($route_match->getRouteName() === 'view.frontpage.page_1') {
+    echo "Hellllllllllllllllllo";
+    $variables['page']['content']['hello_world_message'] = [
+      '#markup' => '<div class="hello-world-message"><h2>Hello, World!</h2></div>',
+      '#allowed_tags' => ['div', 'h2'],
+    ];
+  }
+}
